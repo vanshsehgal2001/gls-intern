@@ -1,38 +1,177 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Glory&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 60px;
+    font-family: 'Glory', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.breed{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 60px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 50px;
+    margin: 60px 0px 0px 40px ;
+    justify-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.image{
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition:all 1s ease-in-out;
+    cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+label{
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+select{
+    font-size: 20px;
+    text-transform: capitalize;
+    border-radius:10px;
+    border: 2px solid black ; 
+    outline:none;
+    cursor: pointer;
+    background: transparent;
+
+}
+
+
+button{
+    font-size:20px;
+    border-radius:10px;
+    padding:10px;
+    cursor:pointer;
+    border: 4px solid black ; 
+    background-color: rgba(0,0,0,0.6);
+    color:white;
+    transition: all 0.5s ease-in-out;
+    outline:none;
+}
+
+button:hover{
+    background-color:black;
+}
+
+.image:hover{
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width:878px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 50px;
+        margin: 40px 0px 0px 40px ;
+    }
+    button{
+    font-size:15px;
+        padding:5px;
+    }
+    label{
+        font-size: 18px;
+        margin-right: 6px;
+    }
+    
+    select{
+        font-size: 14px;
+        text-transform: capitalize;
+        border-radius:10px;
+        border: 2px solid black ; 
+        outline:none;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 713px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(2,3fr);
+        row-gap: 50px;
+        margin: 40px 0px 0px 40px ;
+    }
+    .breed{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 60px;
+        row-gap: 30px;
+    }
+    button{
+        padding: 5px 10px;
+    }
+    .image{
+        width: 250px;
+        height:220px;
+    }
+    label{
+        font-size: 20px;
+        margin-right: 20px;
+    }
+    select{
+        width:20vw;
+    }
+}
+
+@media only screen and (max-width: 655px) {
+    .image{
+        height:200px;
+        width:200px;
+    }
+}
+
+@media only screen and (max-width:552px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(2,3fr);
+        row-gap: 50px;
+        margin: 40px 0px 0px 40px ;
+    }
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 40px;
+        font-family: 'Glory', sans-serif;
+    }
+    
+    select{
+        width:25vw;
+    }
+    button{
+        padding: 3px 8px;
+    }
+    .image{
+        height:150px;
+        width:150px;
+    }
+}
+
+@media only screen and (max-width:434px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(1,3fr);
+        row-gap: 50px;
+        margin: 40px 0px 0px 40px ;
+    }
+    .image{
+        height:200px;
+        width:200px;
+    }
 }
